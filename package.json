@@ -1,0 +1,9 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:didierbrun/advent_code_2023.git",
+  "author": "Didier Brun <db@brundidier.com>",
+  "license": "MIT",
+  "type": "module"
+}
