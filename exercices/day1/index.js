@@ -1,6 +1,6 @@
 import ExerciceBase from '../ExerciceBase.js'
+import { isDigit } from '../../utils/Tools.js'
 
-const DIGIT_EXPRESSION = /^\d$/
 const DIGIT_LETTERS = {one: 1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9}
 
 class Exercice extends ExerciceBase {
@@ -12,7 +12,7 @@ class Exercice extends ExerciceBase {
     resolveFirst(){
         let total = 0
         this.datas.map(line => {
-            let digits = line.split('').filter(c => this.isDigit(c))
+            let digits = line.split('').filter(c => isDigit(c))
 
             let first = digits.slice(0, 1)
             let last = digits.slice(-1)
@@ -42,7 +42,7 @@ class Exercice extends ExerciceBase {
     digitsFromLine(line){
         let digits = []
         while (line.length > 0){
-            if (this.isDigit(line.charAt(0))){
+            if (isDigit(line.charAt(0))){
                 digits.push(parseInt(line.charAt(0)))
             } else {
                 for (let k of Object.keys(DIGIT_LETTERS)){
@@ -54,10 +54,6 @@ class Exercice extends ExerciceBase {
             line = line.substring(1)
         }
         return digits
-    }
-
-    isDigit = (character) => {
-        return character && DIGIT_EXPRESSION.test(character)
     }
 }
 

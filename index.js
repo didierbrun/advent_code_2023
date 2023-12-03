@@ -1,7 +1,5 @@
-import Day2 from './exercices/day2/index.js'
+import Day3 from './exercices/day3/index.js'
 
 
 
-new Day2().resolveSecond()
-
-
+new Day3(false).resolveSecond()
